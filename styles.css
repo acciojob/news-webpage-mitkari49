@@ -7,9 +7,11 @@ body {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
     padding: 20px;
+    gap: 10px;
 }
 
 .header {
@@ -26,20 +28,25 @@ h1, h2, h3 {
 
 .latest-news-section, .main-article, .pictorial-news-section {
     background-color: #ffffff;
-    margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
-    margin: 10px;
     width: 30%;
+    box-sizing: border-box;
 }
 
 .latest-news-section ul, .pictorial-news-section ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .latest-news-section ul li, .pictorial-news-section ul li {
     margin: 5px 0;
+    text-align: left; /* Ensuring correct alignment */
+}
+
+.pictorial-news-section {
+    text-align: center; /* Set text alignment as required by test */
 }
 
 img {
@@ -47,4 +54,12 @@ img {
     width: 100%;
     object-fit: cover;
     margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .latest-news-section, .main-article, .pictorial-news-section {
+        width: 90%;
+    }
 }
